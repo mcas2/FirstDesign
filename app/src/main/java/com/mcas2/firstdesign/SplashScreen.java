@@ -2,7 +2,10 @@ package com.mcas2.firstdesign;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -17,12 +20,16 @@ public class SplashScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+        openLogin();
 
         ImageView logoSplash = findViewById(R.id.logoSplash);
         TextView appNameSplash = findViewById(R.id.appNameSplash);
+
         Animation fadeAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in);
-        logoSplash.startAnimation(fadeAnimation);
         appNameSplash.startAnimation(fadeAnimation);
+
+        Animation shakeAnimation = AnimationUtils.loadAnimation(this, R.anim.shake);
+        logoSplash.startAnimation(shakeAnimation);
 
         ImageView background = findViewById(R.id.backgroundSplash);
         Glide.with(this)
@@ -30,5 +37,17 @@ public class SplashScreen extends AppCompatActivity {
                 .transition(DrawableTransitionOptions.withCrossFade(2000))
                 .centerCrop()
                 .into(background);
+    }
+
+    public void openLogin(){
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }
+        }, 3000);
     }
 }
