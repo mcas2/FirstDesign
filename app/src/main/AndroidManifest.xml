@@ -13,14 +13,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FirstDesign"
+        android:theme="@style/Base.Theme.FirstDesign"
         tools:targetApi="31" >
         <activity
             android:name=".Login"
             android:exported="false" />
         <activity
             android:name=".SplashScreen"
-            android:exported="true" >
+            android:exported="true"
+            android:theme="@style/SplashScreenTheme"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
