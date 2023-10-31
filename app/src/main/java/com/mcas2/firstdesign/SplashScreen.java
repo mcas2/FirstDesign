@@ -31,12 +31,12 @@ public class SplashScreen extends AppCompatActivity {
         Animation shakeAnimation = AnimationUtils.loadAnimation(this, R.anim.shake);
         logoSplash.startAnimation(shakeAnimation);
 
-        ImageView background = findViewById(R.id.backgroundSplash);
-        Glide.with(this)
-                .load("https://images.unsplash.com/photo-1533240332313-0db49b459ad6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80")
-                .transition(DrawableTransitionOptions.withCrossFade(2000))
-                .centerCrop()
-                .into(background);
+        //ImageView background = findViewById(R.id.backgroundSplash);
+        //Glide.with(this)
+        //        .load("https://images.unsplash.com/photo-1533240332313-0db49b459ad6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80")
+        //        .transition(DrawableTransitionOptions.withCrossFade(2000))
+        //        .centerCrop()
+        //        .into(background);
     }
 
     public void openLogin(){
