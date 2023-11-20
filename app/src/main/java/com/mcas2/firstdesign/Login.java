@@ -22,24 +22,22 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        View alertView = LayoutInflater.from(Login.this).inflate(R.layout.alert_email, null);
         forgotPassword = (TextView) findViewById(R.id.forgotPasswordText);
         forgotPassword.setOnClickListener(view -> {
             new AlertDialog.Builder(this)
                     .setTitle("¿Olvidaste tu contraseña?")
                     .setMessage("Puedes recuperarla a través de tu correo electrónico.")
-                    //.setView(taskEditText)
-
-                    // Specifying a listener allows you to take an action before dismissing the dialog.
-                    // The dialog is automatically dismissed when a dialog button is clicked.
-                    .setPositiveButton(android.R.string.search_go, new DialogInterface.OnClickListener() {
+                    .setView(alertView)
+                    .setPositiveButton("Nueva contraseña", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
-                            // Continue with delete operation
+                            Toast.makeText(Login.this, "Mira tu correo y cambia la contraseña", Toast.LENGTH_SHORT).show();
                         }
                     })
 
                     // A null listener allows the button to dismiss the dialog and take no further action.
-                    .setNegativeButton(android.R.string.no, null)
-                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .setNegativeButton("Cancelar", null)
+                    .setIcon(R.drawable.ic_warning)
                     .show();
         });
     }
