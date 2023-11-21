@@ -22,9 +22,9 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        View alertView = LayoutInflater.from(Login.this).inflate(R.layout.alert_email, null);
         forgotPassword = (TextView) findViewById(R.id.forgotPasswordText);
         forgotPassword.setOnClickListener(view -> {
+            View alertView = LayoutInflater.from(Login.this).inflate(R.layout.dialog_recover_email, null);
             new AlertDialog.Builder(this)
                     .setTitle("¿Olvidaste tu contraseña?")
                     .setMessage("Puedes recuperarla a través de tu correo electrónico.")
@@ -34,8 +34,6 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(Login.this, "Mira tu correo y cambia la contraseña", Toast.LENGTH_SHORT).show();
                         }
                     })
-
-                    // A null listener allows the button to dismiss the dialog and take no further action.
                     .setNegativeButton("Cancelar", null)
                     .setIcon(R.drawable.ic_warning)
                     .show();
