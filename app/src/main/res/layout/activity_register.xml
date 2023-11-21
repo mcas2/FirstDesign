@@ -6,4 +6,154 @@
     android:layout_height="match_parent"
     tools:context=".Register">
 
+    <ImageView
+        android:id="@+id/logoRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/huella"
+        android:transitionName="logoPair"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/appTitleRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/classicaldiary"
+        android:text="Welcome to Hikers!"
+        android:textColor="#2D6B27"
+        android:textSize="25sp"
+        android:transitionName="appTitlePair"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logoRegister" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/usernameInputRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/loginGLV2"
+        app:layout_constraintStart_toStartOf="@id/loginGLV1"
+        app:layout_constraintTop_toBottomOf="@id/appTitleRegister"
+        app:startIconDrawable="@drawable/ic_persona">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:inputType="textPersonName" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordInputRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/loginGLV2"
+        app:layout_constraintStart_toStartOf="@id/loginGLV1"
+        app:layout_constraintTop_toBottomOf="@id/usernameInputRegister"
+        app:passwordToggleEnabled="true"
+        app:startIconDrawable="@drawable/ic_llave">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordInputRegisterRepeat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/loginGLV2"
+        app:layout_constraintStart_toStartOf="@id/loginGLV1"
+        app:layout_constraintTop_toBottomOf="@id/passwordInputRegister"
+        app:passwordToggleEnabled="true">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Repeat password"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailInputRegister"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/loginGLV2"
+        app:layout_constraintStart_toStartOf="@id/loginGLV1"
+        app:layout_constraintTop_toBottomOf="@id/passwordInputRegisterRepeat"
+        app:startIconDrawable="@drawable/ic_mail">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/registerButton"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="30dp"
+        app:icon="@drawable/ic_register"
+        app:iconGravity="textStart"
+        app:layout_constraintEnd_toEndOf="@id/loginGLV2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/backToLoginButton"
+        app:layout_constraintTop_toBottomOf="@id/emailInputRegister" />
+
+    <Button
+        android:id="@+id/backToLoginButton"
+        style="@style/Widget.Material3.Button.OutlinedButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="30dp"
+        app:icon="@drawable/ic_login"
+        app:iconGravity="textStart"
+        app:layout_constraintEnd_toStartOf="@+id/registerButton"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@id/loginGLV1"
+        app:layout_constraintTop_toBottomOf="@id/emailInputRegister" />
+
+
+    <TextView
+        android:id="@+id/watermark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/watermark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/registerButton" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/loginGLV1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/loginGLV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.80" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
