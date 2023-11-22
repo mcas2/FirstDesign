@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Pair;
@@ -33,6 +34,8 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         logo = (ImageView) findViewById(R.id.logo);
         appTitle = (TextView) findViewById(R.id.appTitle);
+        logo.setColorFilter(getResources().getColor(android.R.color.primary_text_light), PorterDuff.Mode.SRC_IN);
+        appTitle.setTextColor(getResources().getColor(android.R.color.primary_text_light));
 
 
 
