@@ -3,4 +3,8 @@
     <string name="login_button">Entrar</string>
     <string name="register_button">Registrarse</string>
     <string name="watermark">Hikers by Mario Castro</string>
+    <string name="title_activity_main">Main</string>
+    <string name="tab_text_1">Rutas populares</string>
+    <string name="tab_text_2">Favoritos</string>
+
 </resources>

@@ -23,6 +23,7 @@ import org.w3c.dom.Text;
 public class Login extends AppCompatActivity {
     public TextView forgotPassword;
     public Button registerButton;
+    public Button loginButton;
     public ImageView logo;
     public TextView appTitle;
 
@@ -53,12 +54,14 @@ public class Login extends AppCompatActivity {
         });
 
         registerButton = (Button) findViewById(R.id.registerButton);
+        loginButton = (Button) findViewById(R.id.loginButton);
         registerButton.setOnClickListener(view -> openRegister());
+        loginButton.setOnClickListener(view -> openMain());
     }
 
-    public void openMain(View view) {
-        Toast toast = Toast.makeText(Login.this, "Entrar al Main", Toast.LENGTH_LONG);
-        toast.show();
+    public void openMain() {
+        Intent intent = new Intent(Login.this, Main.class);
+        startActivity(intent);
     }
 
     public void openRegister(){
